@@ -2,6 +2,8 @@ document.getElementById("booking-form").onsubmit = () => {
 
 let isValid = true;
 
+clearErrors();
+
 let traveler = document.getElementById("travelers").value.trim();
 if (traveler <= 0 || traveler == "") {
     document.getElementById("traveler-err").style.display = "block";
