@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --form-width: 639px;
+    --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --background: rgb(25, 72, 83);
+    --background-alpha: rgba(25, 72, 83, 0.705);
+}
+
+body {
+    font-family: var(--font);
+    background-color: var(--background);
+}
+
+#main {
+    margin: 4rem auto;
+    width: var(--form-width);
+    background-color: white;
+    border-radius: 0.5rem;
+
+    header {
+        background-image: url("/images/banner.jpg");
+        background-attachment: fixed;
+        background-position: center;
+        height: 160px;
+        border-radius: .5rem .5rem 0 0;
+
+        .alpha-textbox {
+            background-color: var(--background-alpha);
+            color: white;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+#booking-form {
+    border-radius: 0.5rem;
+    padding: 2rem 1rem 1rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        "location location location location"
+        "depart depart traveler traveler"
+        ". button button .";
+
+    #location {
+        grid-area: location;
+    }
+
+    #depart {
+        grid-area: depart;
+    }
+
+    #traveler {
+        grid-area: traveler;
+    }
+
+    #find-vacation {
+        grid-area: button;
+        margin: 1rem;
+        padding: 0.75rem 0;
+        background-color: var(--background);
+        color: white;
+        border-radius: 1rem;
+        border: 1px solid;
+
+        h3 {
+            margin: 0;
+        }
+    }
+}
+
+footer {
+    text-align: center;
+    font-weight: 700;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+}
+
+.input-field {
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid;
+    margin-top: 0.25rem;
+}
+
+.label-container {
+    display: block;
+}
+
+.err {
+    color: red;
+    font-size: 12px;
+    display:none;
+}

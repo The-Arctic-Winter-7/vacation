@@ -5,32 +5,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vacation Booking</title>
+
+  <!-- Stylesheet -->
+  <link rel="Stylesheet" href="styles/style.css">
+
+  <!-- JavaScript-->
+  <script src="scripts/vacation.js" defer></script>
+
 </head>
 
 <body>
-  <header>
-    <img src="images/banner.jpg" alt="A sunny beachfront with sandbridge leading to small island and a woman walking towards it.">
-    <h1>Book Your Dream Vacation</h1>
-  </header>
   <div id="main">
-    <form action="#" method="post">
-      <label for="destination">Destination</label>
-      <select id="destination" name="destination">
-        <option value="none">Choose a Destination...</option>
-        <option value="san-jose">San Jose, Costa Rica</option>
-        <option value="okinawa">Naha, Okinawa, Japan</option>
-        <option value="rio-de-janeiro">Rio de Janeiro, Brazil</option>
-        <option value="napoli">Napoli, Italy</option>
-        <option value="hawaii">Honolulu, USA</option>
-      </select>
-
-      <label for="departure">Departure Date</label>
-      <input type="date" id="departure" name="departure">
-
-      <label for="travelers">Number of Travelers</label>
-      <input type="text" id="travelers" name="travelers">
+    <header>
+      <div class="alpha-textbox">
+        <h1>Book Your Dream Vacation</h1>
+      </div>
+    </header>
+    <form id="booking-form" action="/submit" method="POST">
+      <div class="container" id="location">
+        <div class="label-container">
+          <label for="destination">Destination</label>
+          <span class="err" id="depart-err">Please select a destination</span>
+        </div>
+        <select class="input-field" id="destination" name="destination">
+          <option value="none">Choose a Destination...</option>
+          <option value="san-jose">San Jose, Costa Rica</option>
+          <option value="okinawa">Naha, Okinawa, Japan</option>
+          <option value="rio-de-janeiro">Rio de Janeiro, Brazil</option>
+          <option value="napoli">Napoli, Italy</option>
+          <option value="hawaii">Honolulu, USA</option>
+        </select>
+      </div>
+      <div class="container" id="depart">
+        <label for="departure">Departure Date</label>
+        <input type="date" class="input-field" id="departure" name="departure">
+      </div>
+      <div class="container" id="traveler">
+        <div class="label-container">
+          <label for="travelers">Number of Travelers</label>
+          <span class="err" id="traveler-err">Number of Travelers must be greater than 0</span>
+        </div>
+        <input type="text" class="input-field" id="travelers" name="travelers">
+      </div>
+      <button type="submit" id="find-vacation">
+        <h3>Find My Vacation</h3>
+      </button>
     </form>
   </div>
+  <footer>
+    <a href="https://github.com/The-Arctic-Winter-7/vacation">GitHub Repository</a>
+  </footer>
 </body>
 
 </html>
